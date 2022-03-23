@@ -1,45 +1,35 @@
 package Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class SearchInString {
 
     public static void main(String[] args) {
-        String x = "ABC";
-        String y = "ACDGGHHABCABCLLABCABCABC";
-        boolean flag = false;
-        int maxCount = 0;
-        Set<Integer> set = new HashSet<>();
-
-        StringBuilder st = new StringBuilder();
-
-
-
-        while (y.indexOf(x) != -1) {
-
-            int i = y.indexOf(x);
-            int count = 1;
-            y = y.substring(i);
-            if (i == 0) {
-                y = y.substring(x.length());
-                set.add(++count);
-            }
-
-            System.out.println(y);
-        }
-
-        System.out.println(set);
+        String x = "B";
+        String y = "BBBCBBB";
+        System.out.println(searchRepeat(x, y));
 
     }
 
 
     public static int searchRepeat(String little, String big) {
-        int i = big.indexOf(little);
 
+        HashMap<String,Integer> map = new HashMap<>();
 
-        return 0;
+        String abc = big.replaceAll(little, "1");// заменяем подстроку little на 1
+        String[] split = abc.split("");
+
+        String previous = " ";
+        for (int i = 0; i < split.length; i++) {
+            if (split[i].equals(previous)) {
+                map.put(previous,map.get(previous) + 1);
+            }else if (!map.containsKey(split[i])){
+                map.put(split[i], 1);
+            }
+            previous = split[i];
+        }
+        System.out.println(map);
+
+        return map.get("1");
     }
 }
