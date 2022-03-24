@@ -29,6 +29,7 @@ public class SearchInString {
             previous = split[i];
         }
         System.out.println(map);
+        System.out.println();
 
         return map.get("1");
     }
