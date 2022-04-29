@@ -1,25 +1,15 @@
 package Test;
 
+import java.util.*;
+
 public class TestSome {
 
     public static void main(String[] args) {
 
-        int x = 7;
-        incrementNumber(x);
-        System.out.println(x);
 
-        Cat cat = new Cat(7);
-        catLevelUp(cat);
-        System.out.println(cat.getX());
+        System.out.println(FindDuplicate.findOne(List.of(1, 2, 2, 3, 4, 5, 5, 6)));
 
-    }
 
-    public static void catLevelUp(Cat cat) {
-
-        cat.setX(cat.getX()+1);
-    }
-
-    public static void incrementNumber(int x) {
-        x++;
     }
 }
+

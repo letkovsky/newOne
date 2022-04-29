@@ -50,33 +50,6 @@ public class NotDuplicate {
         System.out.println(collect);
 
 
-//        List<Integer> collectList = Arrays.stream(sorted)
-//                .boxed()
-//                .collect(Collectors.toList());
-//
-//        int maxInt = sorted[sorted.length - 1];
-//        int maxCondidate = maxInt / 2;
-//        int i1 = collectList.indexOf(maxCondidate);
-//        System.out.println(i1);
-//
-//
-//        System.out.println(Arrays.toString(sorted));
-//
-//
-//
-//
-//
-//        List<Integer> integers = Arrays.stream(sorted)
-//                .filter(i -> (i * 2) <= maxInt)
-//                .boxed()
-//                .collect(Collectors.toList());
-//
-//        System.out.println(integers);
-//
-//        integers.removeIf(next -> duplicate.contains(next * 2));
-//        System.out.println(integers);
-
-
     }
 }
 
