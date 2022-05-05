@@ -9,6 +9,7 @@ import static Test.Tools.Writer;
 
 public class TestOne {
 
+
     private int x;
     private String s;
 
