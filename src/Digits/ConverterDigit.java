@@ -1,4 +1,4 @@
-package Test;
+package Digits;
 
 import java.util.ArrayList;
 import java.util.Arrays;
