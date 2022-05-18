@@ -57,6 +57,8 @@ public class Tools {
         System.out.println(cats);
         cats.sort(comparator1);
         System.out.println(cats);
+
+        System.out.println(Math.sqrt(100));
     }
 
 }

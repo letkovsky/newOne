@@ -35,6 +35,12 @@ public class TestSome {
         List<Integer> collect1 = strings.stream().sorted().collect(Collectors.toList());
         System.out.println(collect1);
 
+        int[] nums = new int[]{1,2,3,4,5};
+        List<Integer> collect3 = Arrays.stream(nums)
+                .boxed()
+                .collect(Collectors.toList());
+        int[] ints = collect3.stream().mapToInt(x -> x).toArray();
+
 
     }
 }

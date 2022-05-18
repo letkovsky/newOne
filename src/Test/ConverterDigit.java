@@ -46,4 +46,22 @@ public class ConverterDigit {
         return digits;
     }
 
+    public static int[] digitize4(long n){
+        // with String
+        String s = String.valueOf(n);
+
+
+        int[] digits = new int[s.length()];
+        for (int i = s.length() - 1; i >= 0 ; i--){
+
+            digits[digits.length - 1 - i] = Integer.parseInt(String.valueOf(s.charAt(i)));
+        }
+        return digits;
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(digitize4(1234)));
+    }
+
 }
