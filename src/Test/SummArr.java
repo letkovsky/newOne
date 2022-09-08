@@ -1,9 +1,7 @@
 package Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class SummArr {
 
@@ -18,8 +16,9 @@ public class SummArr {
             if (map.containsValue(num - arr[i])) {
                 int temp = num - arr[i];
 
+
                 Optional<Integer> first = map.entrySet().stream()
-                        .filter(e -> e.getValue().equals(temp))
+                        .filter(e -> e.getValue() == temp) // e.getValue().equals(temp)
                         .map(Map.Entry::getKey)
                         .findFirst();
                 if (first.isPresent()) {
@@ -37,10 +36,33 @@ public class SummArr {
     }
 
 
+    public static int[] searchDigits( int[] arr, int sum){
+        int[] result = new int[2];
+       HashMap<Integer,Integer> map = new HashMap<>();
+        Set<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.toSet());
+        HashSet<Integer> set = new HashSet();
+        for (int i = 0; i < arr.length; i++) {
+            if (set.contains(sum - arr[i])){
+                result[0] = sum - arr[i];
+                result[1] = arr[i];
+                map.put(sum - arr[i], arr[i]);
+            } else {
+                set.add(arr[i]);
+            }
+
+        }
+
+        System.out.println(map);
+        System.out.println(collect);
+        System.out.println(set);
+        return result;
+    }
+
+
     public static void main(String[] args) {
-        int[] ints = {3, 5, 7, 9, 14};
+        int[] ints = {3, 5,16, 7, 9,10,14, 12};
         int num = 19;
-        System.out.println(Arrays.toString(searchInd(ints, num)));
+        System.out.println(Arrays.toString(searchDigits(ints, num)));
 
     }
 }
