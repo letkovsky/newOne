@@ -4,13 +4,23 @@ import java.util.Objects;
 
 public class Cat {
 private int x;
+private  String name;
 
-    public Cat(int x) {
+    public Cat(int x, String name) {
         this.x = x;
+        this.name = name;
     }
 
     public int getX() {
         return x;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setX(int x) {
@@ -34,6 +44,7 @@ private int x;
     public String toString() {
         return "Cat{" +
                 "x=" + x +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

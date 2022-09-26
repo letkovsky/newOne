@@ -46,19 +46,25 @@ public class Tools {
         };
         Comparator<Cat> comparing = Comparator.comparing(o -> o.getX());
         Comparator<Cat> comparator2 = (o1, o2) -> o1.getX() - o2.getX();
-        Comparator<Cat> comparator1 = Comparator.comparing(Cat::getX);
-        List<Cat> cats = new ArrayList<>();
-        cats.add(new Cat(1));
-        cats.add(new Cat(4));
 
-        cats.add(new Cat(3));
-        cats.add(new Cat(0));
-        List<Cat> cats1 = List.of(new Cat(1), new Cat(4), new Cat(3), new Cat(0));
+        Comparator<Cat> comparator1 = Comparator.comparing(Cat::getX);
+
+        List<Cat> cats = new ArrayList<>();
+        cats.add(new Cat(1, "test1"));
+        cats.add(new Cat(4,"test2"));
+
+        cats.add(new Cat(3,"test3"));
+        cats.add(new Cat(0, "test4"));
+
         System.out.println(cats);
+
         cats.sort(comparator1);
         System.out.println(cats);
 
-        System.out.println(Math.sqrt(100));
+        List<Cat> collect1 = cats.stream().sorted(Comparator.comparing(Cat::getX).reversed()).collect(Collectors.toList());
+        System.out.println(collect1);
+
+
     }
 
 }
