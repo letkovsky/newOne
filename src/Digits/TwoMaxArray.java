@@ -1,5 +1,9 @@
 package Digits;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 public class TwoMaxArray {
     public static int findSecondMax(int[] arr) {
         int max = arr[0]; // max
@@ -14,15 +18,14 @@ public class TwoMaxArray {
     }
 
     public static void main(String[] args) {
-        int[] ints = new int[]{3,4,5,8,4,56,34,23,77};
-        System.out.println(findSecondMax(ints));
-        System.out.println();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(1,1);
+        map.put(2,2);
+        map.put(3,3);
+        map.put(4,4);
+        Set<Map.Entry<Integer, Integer>> entries = map.entrySet();
 
-        String s = "Hello";
-        String hello = new String("Hello");
-        String hello1 = new String("Hello");
 
-        System.out.println(hello.equals(hello1));
     }
 
 }
