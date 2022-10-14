@@ -15,31 +15,28 @@ public class Calculator {
         this.tokens = convert(expression);
     }
 
-
+    // [\+\-\*]?\d+(\.\d+)
+    //([-+/*()]|\d)
     public static void main(String[] args) {
 
-        String exp = "10-5*(3+4)+2";
+        String exp = "13-5*(3+4)+24";
+
         Calculator calculator = new Calculator(exp);
         System.out.println(calculator.calculate());
-        System.out.println(10-5.0*(3+4)+2);
+        System.out.println(13-5.0*(3+4)+24);
 
     }
 
     private String[] convert(String exp) {
 
-        String[] split = exp.split("");
-        String example = "0123456789";
 
-        for (int i = 0; i < split.length - 1; i++) {
-            if (example.contains(split[i + 1]) && example.contains(split[i])) {
-                split[i] += split[i + 1];
-                split[i + 1] = null;
-            }
+        List<String> list = new ArrayList<>();
+        Pattern pattern = Pattern.compile("([+-/*()]|\\d+)");
+        Matcher matcher = pattern.matcher(exp);
+        while (matcher.find()){
+            list.add(matcher.group());
         }
-        String[] strings = Arrays.stream(split)
-                .filter(e -> e != null)
-                .toArray(String[]::new);
-        return strings;
+        return list.toArray(new String[0]);
     }
 
     public double calculate() {
