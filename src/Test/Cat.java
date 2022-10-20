@@ -2,7 +2,7 @@ package Test;
 
 import java.util.Objects;
 
-public class Cat {
+public class Cat implements Comparable {
 private int x;
 private  String name;
 
@@ -27,6 +27,19 @@ private  String name;
         this.x = x;
     }
 
+
+    public void change(int y){
+        y += 10;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat(1);
+        int y = 5;
+        cat.change(y);
+        System.out.println(y);
+        System.out.println(cat.x);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,5 +59,10 @@ private  String name;
                 "x=" + x +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
