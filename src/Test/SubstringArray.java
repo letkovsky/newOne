@@ -12,6 +12,7 @@ public class SubstringArray {
     //          a1 = ["arp", "live", "strong"]
     //          a2 = ["lively", "alive", "harp", "sharp", "armstrong"]
     //          returns ["arp", "live", "strong"]
+    //t test
 
 
     public static String[] WhichAreIn1(String[] a, String[] b) {
