@@ -33,7 +33,7 @@ private  String name;
     }
 
     public static void main(String[] args) {
-        Cat cat = new Cat(1);
+        Cat cat = new Cat(1, "df");
         int y = 5;
         cat.change(y);
         System.out.println(y);
